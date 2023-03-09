@@ -1,11 +1,11 @@
-import React from 'react'
+import React from "react";
 
 interface Props {
-  children: React.ReactElement
+  children: React.ReactNode;
 }
 
 const Panel = ({ children }: Props) => {
-  return <div>{children}</div>
-}
+  return <div>{children}</div>;
+};
 
-export default Panel
+export default Panel;

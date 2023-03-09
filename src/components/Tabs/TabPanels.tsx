@@ -1,21 +1,21 @@
-import React from 'react'
-import { useTabsContext } from './TabsContext'
+import React from "react";
+import { useTabsContext } from "./TabsContext";
 
 interface Props {
-  children: React.ReactElement
+  children: React.ReactNode;
 }
 
 const TabPanels = ({ children }: Props) => {
-  const { activeTab } = useTabsContext()
+  const { activeTab } = useTabsContext();
 
   const panel = React.Children.map(children, (child, index) => {
     if (!React.isValidElement(child)) {
-      return null
+      return null;
     }
-    return activeTab === index ? child : null
-  })
+    return activeTab === index ? child : null;
+  });
 
-  return <div>{panel}</div>
-}
+  return <div>{panel}</div>;
+};
 
-export default TabPanels
+export default TabPanels;
