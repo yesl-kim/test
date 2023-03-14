@@ -35,20 +35,18 @@ function App() {
         </Tabs.TabPanels>
       </Tabs> */}
       <AllCheckBox.Provider data={CHECK_DATA}>
-        <AllCheckBox.AllCheckButton label="어디 되나 보자" />
-        <AllCheckBox.List>
-          {({ list, onToggleItem }) => {
-            console.log('list: ', list)
-            console.log('toggleItem: ', onToggleItem)
-            return list.map(({ checked, id }) => (
+        <AllCheckBox.AllCheckButton />
+        <AllCheckBox.List
+          renderItem={({ list, onToggleItem }) =>
+            list.map(({ checked, id }) => (
               <Checkbox
                 checked={checked}
                 key={id}
                 onClick={() => onToggleItem(id)}
               />
             ))
-          }}
-        </AllCheckBox.List>
+          }
+        />
       </AllCheckBox.Provider>
     </Container>
   )

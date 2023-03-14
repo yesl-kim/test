@@ -1,4 +1,4 @@
-import React, { useCallback, useMemo, useState } from 'react'
+import React, { useCallback, useEffect, useMemo, useState } from 'react'
 import { CheckContext, CheckItem } from './CheckContext'
 
 interface Props {
@@ -30,7 +30,7 @@ export const AllCheckProvider = ({ children, data }: Props) => {
     setCheckedItemList((prev) =>
       prev.map((item) => ({ ...item, checked: !isAllChecked }))
     )
-  }, [])
+  }, [isAllChecked])
 
   const value = useMemo(
     () => ({
