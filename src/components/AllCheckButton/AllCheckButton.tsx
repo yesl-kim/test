@@ -7,9 +7,8 @@ interface Props {
   label?: string
 }
 
-export const AllCheckButton = ({
-  label = '모두 확인 및 동의합니다.',
-}: Props) => {
+export const defaultLabel = '모두 확인 및 동의합니다.'
+export const AllCheckButton = ({ label = defaultLabel }: Props) => {
   const { isAllChecked, toggleAll } = useCheckContext()
   return (
     <Container onClick={toggleAll}>
